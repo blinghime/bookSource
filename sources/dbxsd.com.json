@@ -1,0 +1,31 @@
+{
+  "bookSourceName": "独步小说网",
+  "bookSourceUrl": "https://www.dbxsd.com",
+  "searchUrl": "https://www.dbxsd.com/plus/search.php?q={{key}}",
+  "ruleSearch": {
+    "bookList": "a[href*='/book/']",
+    "name": "@text",
+    "bookUrl": "@href"
+  },
+  "ruleBookInfo": {
+    "name": "h1@text",
+    "author": "text.作者##作者：",
+    "intro": "#intro@text",
+    "tocUrl": "##"
+  },
+  "ruleToc": {
+    "chapterList": "#list a",
+    "chapterName": "@text",
+    "chapterUrl": "@href"
+  },
+  "ruleContent": {
+    "content": "#content@html",
+    "replaceRegex": [
+      "本章未完.*",
+      "请收藏.*",
+      "最新网址.*",
+      "手机用户.*",
+      "阅读提示.*"
+    ]
+  }
+}
